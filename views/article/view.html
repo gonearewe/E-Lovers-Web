@@ -1,0 +1,64 @@
+{{template "template/head.html" .}}
+    {{template "template/navbar.html" .}}
+                <!-- Page Header -->
+<header class="intro-header" style="background-image: url('static/img/home-bg-bay-bridge.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Mactavish</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">We are defined by what we've done</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- Main Content -->
+<div class="container">
+        <div class="row">
+            
+    
+    <!-- USE SIDEBAR -->
+        <!-- PostList Container -->
+                <div class="
+                    col-lg-8 col-lg-offset-1
+                    col-md-8 col-md-offset-1
+                    col-sm-12
+                    col-xs-12
+                    postlist-container
+                ">
+        {{range .articles}}
+        <div class="post-preview">
+                <a href="/article/read?id={{.Id}}">
+                    <h2 class="post-title">
+                            {{.Title}}
+                    </h2>
+                    
+                    <h3 class="post-subtitle">
+                            {{.Subtitle}}
+                    </h3>
+                    
+                    <div class="post-content-preview">
+                        preview
+                    </div>
+                </a>
+                <p class="post-meta">
+                    Posted by {{.Author}} on {{.Createtime}}
+                </p>
+            </div>
+            <hr>
+        {{end}}
+    </div>
+    
+    <ul class="pagination pagination-lg">
+        <li class="page-item {{if not .HasPrevious}}disabled{{end}}">
+            <a class="page-link" href="{{.PreviousLink}} ">Previous</a></li>
+        <li class="page-item {{if .Pagination.HasPrevious}}{{else}}disabled{{end}}">
+            <a class="page-link" href="{{.NextLink}}">Next</a></li>
+      </ul>
+        </div>
+        </div>
+        </div>
+</body>
+</html>

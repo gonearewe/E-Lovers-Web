@@ -1,0 +1,27 @@
+{{template "template/head.html" .}}
+    {{template "template/navbar.html" .}}
+    <div class="container">
+        <form id="form-article" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="">标题</label>
+              <input type="text" name="title" id="title" class="form-control" placeholder="请输入文章标题">
+            </div>
+            <div class="form-group">
+              <label for="">副标题</label>
+              <input type="text" name="subtitle" id="subtitle" class="form-control" placeholder="请输入文章副标题">
+            </div>
+            <div class="form-group">
+              <label for="">文章标签（以‘&’分隔）</label>
+              <input type="text" name="tags" id="tags" class="form-control" placeholder="请输入文章标签">
+            </div>
+            <div class="form-group">
+              <label for="">选择文章（markdown格式）</label>
+              <input type="file" name="article" id="article" class="form-control">
+            </div>
+            <div class="form-group">
+              <button type="submit" name="submit" class="btn btn-primary">上传</button>
+          </div>
+        </form>
+    </div>
+</body>
+</html>

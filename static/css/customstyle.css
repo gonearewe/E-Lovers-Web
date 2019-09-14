@@ -1,0 +1,18 @@
+.jumbotron{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+}
+.jumbotron h1{
+    color: aliceblue
+}
+.jumbotron p{
+    color: aliceblue
+}
+#jumbotron1{
+    background-image: url(/static/img/home-chip.jpg);
+}
+.navbar{
+    background-color: #17233b
+}
