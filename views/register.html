@@ -3,6 +3,14 @@
     <div class="container">
         <form id="form-register">
             <div class="form-group">
+                <label for="">邮箱</label>
+                <input type="text" class="form-control" name="emailaddr" id="emailaddr" 
+                    placeholder="请输入注册邮箱">
+            </div>
+            <div class="form-group">
+                <button type="submit" name="verify" id="sendEmail" class="btn btn-primary">发送验证码</button>
+            </div>
+            <div class="form-group">
                 <label for="">用户名</label>
                 <input type="text" class="form-control" name="username" id="username" 
                     placeholder="请输入用户名">
@@ -18,7 +26,7 @@
                     placeholder="请重新输入密码">
             </div>
             <div class="form-group">
-                <button type="submit" name="submit" class="btn btn-primary">提交</button>
+                <button type="submit" name="submit" class="btn btn-success">提交</button>
             </div>
 
         </form>

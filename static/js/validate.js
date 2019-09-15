@@ -1,3 +1,23 @@
+$('#sendEmail').click(sendEmail)
+function sendEmail(){
+  $('form').ajaxSubmit()({
+        url:'/register',
+        async:false,
+        type:"post",
+        dataType:"json",
+        cache:false,
+        data:{"step":1,"emailaddr":$('#emailaddr').val()},
+        success:function (data,status) {
+            alert("data:"+data.message)
+            if (data.code == 0){
+               alert("验证码已发出")
+            }
+        },
+        err:function (data,status) {
+            alert("err:"+data.message+":"+status)
+        }
+    })
+}
 $(function () {
     $('#form-register').bootstrapValidator({
       message: 'This value is not valid',
