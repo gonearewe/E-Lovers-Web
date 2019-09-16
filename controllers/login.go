@@ -17,8 +17,9 @@ func (c *LoginController) Get() {
 
 func (c *LoginController) Post() {
 	log := tools.NewLogger()
+	defer log.Close()
 
-	user := models.NewUser(c.GetString("username"), tools.Md5(c.GetString("password")))
+	user := models.NewUser(c.GetString("username"), "", tools.Md5(c.GetString("password")))
 	if user.Exist() == false {
 		c.Data["json"] = map[string]interface{}{"code": 4, "message": "用户名不存在"}
 		c.ServeJSON()

@@ -1,8 +1,8 @@
 
-<nav class="navbar navbar-expand-md  navbar-fixed-top">
+<nav class="navbar navbar-expand-md bg-dark navbar-fixed-top">
 
     <!---放log的地方-->
-    <a class="navbar-brand" href="#">E Lovers</a>
+    <a class="navbar-brand" href="#" active>E Lovers</a>
     <!------button为实现响应式布局，如果在手机上查看，点击button就可以弹出菜单---->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -12,13 +12,13 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <!-- 把Go模板的active放在class里面才有效，在外面另外写一个class貌似没有用，不知道为什么 -->
-                <a class="nav-link {{if .activeHome}} active {{end}}" href="#">HOME</a>
+                <a class="nav-link {{if .activeHome}} active {{end}}" href="/">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{if .activeFile}} active {{end}}" href="#">File</a>
+                <a class="nav-link {{if .activeFile}} active {{end}}" href="/file/view">File</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{if .activeAbout}} active {{end}}" href="#">ABOUT</a>
+                <a class="nav-link {{if .activeAbout}} active {{end}}" href="/about">ABOUT</a>
             </li>
         </ul>
         <!--导航栏右部，一般的登录 注册-->

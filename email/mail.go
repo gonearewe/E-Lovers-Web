@@ -16,7 +16,7 @@ type email struct {
 	to       string `addr of email receiver`
 	host     string `email host providing smtp service`
 	password string `password of email sender`
-	Message  *gomail.Message
+	*gomail.Message
 }
 
 func newEmail(receiver string) *email {
@@ -28,7 +28,7 @@ func newEmail(receiver string) *email {
 		Message:  gomail.NewMessage(),
 	}
 	m.SetHeader("From", m.from)
-	m.SetHeader("To", m.receiver)
+	m.SetHeader("To", m.to)
 	return m
 }
 
@@ -59,5 +59,5 @@ func SendVerifyCodeEmail(targetEmail string) (verifiedCode string, err error) {
 }
 func (m *email) send() error {
 	d := gomail.NewDialer(m.host, 587, m.from, m.password)
-	return d.DialAndSend(m.message)
+	return d.DialAndSend(m.Message)
 }

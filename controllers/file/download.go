@@ -1,4 +1,4 @@
-package controllers
+package controllers_file
 
 import (
 	"io/ioutil"
@@ -13,7 +13,10 @@ type FileDownloadController struct {
 }
 
 func (c *FileDownloadController) Get() {
+	c.Data["activeFile"] = true
+
 	log := tools.NewLogger()
+	defer log.Close()
 
 	path := beego.AppConfig.String("filepath")
 	files, err := ioutil.ReadDir(path)
